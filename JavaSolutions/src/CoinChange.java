@@ -1,8 +1,6 @@
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
-import java.util.Collections;
 
 //https://www.hackerrank.com/challenges/coin-change
 //https://www.youtube.com/watch?v=_fgjrs570YE	
