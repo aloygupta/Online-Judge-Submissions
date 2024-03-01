@@ -1,34 +1,30 @@
 //https://www.hackerrank.com/challenges/candies
+import misc.MaxOddBinaryNum;
+
 import java.io.*;
 import java.util.*;
 
 public class Solution {
+
+    private String in;
     public static void main(String[] args) throws IOException{
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int N = Integer.parseInt(br.readLine());
-        int[] ar = new int[N];
-        for(int i = 0; i < N; ar[i++] = Integer.parseInt(br.readLine())){}
-        br.close();
-        
-        int[] cc = new int[N];
-        cc[0] = 1;
-        for(int i = 1; i < N; i++){
-            cc[i] = 1;
-            if (ar[i] > ar[i-1]){
-                cc[i] += cc[i-1];
-            } else {
-                /*for(int j = i; (j > 0 && ar[j] < ar[j-1] && cc[j] == cc[j-1]); cc[--j] += 1){
-                	
-                }*/
-            	
-            	for(int j = i; (j > 0 && ar[j] < ar[j-1] && cc[j] == cc[j-1]);j--){
-            		cc[j-1] += 1;
-                }
-            }
-        }
-        
-        long sum = 0;
-        for(int i = 0; i < N; sum += cc[i++]){}
-        System.out.print(sum);
+        Solution solution = new Solution();
+        solution.readInput();
+        MaxOddBinaryNum maxOddBinaryNum = new MaxOddBinaryNum();
+
+        String out = maxOddBinaryNum.maximumOddBinaryNumber(solution.in);
+
+        solution.displayOutput(out);
     }
+
+    private void readInput() throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        in = br.readLine();
+        br.close();
+    }
+
+    private void displayOutput(String out){
+        System.out.println(out);
+    }
+
 }
