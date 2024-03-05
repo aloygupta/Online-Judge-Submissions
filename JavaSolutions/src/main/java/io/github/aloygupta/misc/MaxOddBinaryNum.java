@@ -1,4 +1,4 @@
-package misc;
+package io.github.aloygupta.misc;
 
 import java.io.BufferedReader;
 import java.io.IOException;
